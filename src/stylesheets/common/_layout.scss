@@ -1,0 +1,35 @@
+body {
+  font-family: "Roboto", 'Helvetica Neue, Helvetica, Arial', sans-serif;
+  @include font-smoothing;
+  text-rendering: optimizeLegibility;
+  text-align: center;
+  color: $grey;
+  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $greyIron;
+  text-decoration: none;
+  opacity: 1;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.message {
+  border: 1px solid $greyLight;
+  padding: 10px;
+  &.success {
+    border-color: $greenJade;
+  }
+  &.error {
+    border-color: $redThunderbird;
+  }
+  &.warning {
+    border-color: $yellowSandstorm;
+  }
+}

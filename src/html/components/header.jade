@@ -1,0 +1,17 @@
+header.mdl-layout__header(role="banner")
+  .mdl-layout__drawer-button
+    i.material-icons menu
+  .mdl-layout__header-row
+    .mdl-layout-title
+      a(href="/", title="#{ __('Global.Title') }")
+        +sprite('viget', '0 0 500 182')
+    .mdl-layout-spacer
+    nav.mdl-navigation
+      a.mdl-navigation__link(href="")
+        i.material-icons account_circle
+    .mdl-layout-search.mdl-textfield.mdl-js-textfield.mdltextfield--expandable.mdl-textfield--floating-label.mdl-textfield--align-right
+      form(action="#", id="search-form")
+        label.mdl-button.mdl-js-button.mdl-button--icon(for="search-value")
+          i.material-icons search
+        .mdl-textfield__expandable-holder
+          input.mdl-textfield__input(type="text", name="q", autocomplete="off", id="search-value")
