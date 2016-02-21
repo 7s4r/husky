@@ -1,26 +1,36 @@
-var webpack = require('webpack');
-var path = require('path');
-var autoprefixer = require('autoprefixer');
+var webpack = require("webpack");
+var path = require("path");
+var autoprefixer = require("autoprefixer");
 
 module.exports = {
+  context: __dirname,
   entry: [
-    'babel-polyfill',
-    './src/javascripts/app'
+    path.resolve(__dirname, "src/javascripts/main.js"),
+    "file?name=index.html!jade-html!./src/html/index.jade"
   ],
   output: {
-    filename: '[name].js',
-    path: path.join(__dirname, './build')
+    path: path.resolve(__dirname, "build"),
+    filename: "[name].js",
+    publicPath: "/assets/"
   },
   module: {
     loaders: [
       {
+        test: /\.jade$/,
+        loader: "jade"
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader']
+        loader: "babel!eslint"
       },
       {
         test: /\.scss$/,
-        loader: "style-loader!css-loader!postcss-loader!sass-loader"
+        loader: "style!css!autoprefixer?browsers=last 2 version!sass"
+      },
+      {
+        test: /\.json/,
+        loader: "json"
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
@@ -28,17 +38,16 @@ module.exports = {
       }
     ]
   },
-  postcss: [
-    autoprefixer({
-      browsers: ['last 2 versions']
-    })
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin()
   ],
   resolve: {
-    extensions: ['', '.js', '.scss'],
-    modulesDirectories: ['src', 'node_modules']
+    root: path.resolve(__dirname, ""),
+    extensions: ["", ".js", ".scss", ".json"],
+    modulesDirectories: ["src", "node_modules"]
   },
   devServer: {
-    contentBase: "./public",
+    contentBase: path.resolve(__dirname, "build"),
     noInfo: true, //  --no-info option
     hot: true,
     inline: true
