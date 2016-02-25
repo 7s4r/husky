@@ -1,0 +1,27 @@
+mixin link(icon, title, href, text)
+  - if (typeof(href) === 'undefined') href="#"
+  - if (typeof(text) === 'undefined') text=title
+  - if (!icon) {
+  a(href="#{href}", title="#{title}", attributes)!=text
+  if block
+    block
+  - } else if (icon === ' ') {
+  a(href="#{href}", title="#{title}", attributes)
+    span.icons-label!=text
+    block other
+  - } else {
+  a(href="#{href}", title="#{title}", attributes)
+    span(class="icon icon-#{icon}")
+    - if (text === "") {
+    block other
+    -} else {
+    span.icons-label!=text
+    block other
+    -}
+  - }
+
+mixin sprite(id, viewBox, classes)
+  - viewBox = viewBox || "0 0 1 1"
+  span(class="sprite -#{id} #{classes}")
+    svg(viewBox="#{viewBox}")
+      use(xlink:href="images/sprites.svg##{id}")

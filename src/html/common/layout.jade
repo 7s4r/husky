@@ -1,0 +1,27 @@
+include variables
+include helpers
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title=title
+    meta(name="description", content="#{description}")
+    meta(name="viewport", content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width")
+    link(rel="stylesheet", href="//code.getmdl.io/1.1.1/material.indigo-orange.min.css")
+    link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin,cyrillic")
+    link(rel="stylesheet", href="//fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet", href="#{cssPath}/main.css", type="text/css")
+  body
+    .mdl-layout__container
+      .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+        include ../components/header
+        include ../components/nav
+
+        main.mdl-layout__content
+          block content
+
+        include ../components/footer
+
+    script(defer="", src="//code.getmdl.io/1.1.1/material.min.js")
+    script(src="")

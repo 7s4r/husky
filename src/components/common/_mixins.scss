@@ -1,0 +1,15 @@
+@each $i, $prop in $k-right-ear {
+  $k-right-ear: map-merge($k-right-ear, (
+    $i: $prop + ' ' + rotateY(180deg)
+  ));
+}
+
+@mixin effect($name, $kf) {
+  @keyframes #{$name} {
+    @each $interval, $transform in $kf {
+      #{percentage($interval/$total-kf)} {
+        transform: $transform;
+      }
+    }
+  }
+}
