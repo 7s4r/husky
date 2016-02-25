@@ -1,11 +1,11 @@
-var webpack = require("webpack");
-var path = require("path");
-var autoprefixer = require("autoprefixer");
+var webpack = require("webpack")
+var path = require("path")
+var autoprefixer = require("autoprefixer")
 
 module.exports = {
-  context: __dirname,
+  devtool: 'source-map',
   entry: [
-    path.resolve(__dirname, "src/javascripts/main.js"),
+    path.resolve(__dirname, "src/javascripts/main"),
     "file?name=index.html!jade-html!./src/html/index.jade"
   ],
   output: {
@@ -39,17 +39,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin()
   ],
   resolve: {
     root: path.resolve(__dirname, ""),
     extensions: ["", ".js", ".scss", ".json"],
     modulesDirectories: ["src", "node_modules"]
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, "build"),
-    noInfo: true, //  --no-info option
-    hot: true,
-    inline: true
   }
-};
+}

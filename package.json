@@ -1,26 +1,32 @@
 {
   "name": "husky",
   "version": "0.0.1",
-  "description": "a site to promote husky association",
-  "main": "index.js",
-  "scripts": {
-    "start": "node ./server.js",
-    "dev": "webpack-dev-server -d --devtool eval  --progress --profile --colors --hot --inline --watch --content-base build",
-    "test": "karma start --single-run",
-    "build": "webpack:production --progress --profile --colors"
-  },
+  "description": "a site to promote siberian husky in France",
+  "author": "Gueorgui AGAPOV",
+  "license": "MIT",
+  "homepage": "https://husky-de-siberie.fr",
   "repository": {
     "type": "git",
     "url": "https://github.com/7s4r/husky.git"
   },
-  "author": "Gueorgui AGAPOV",
-  "license": "MIT",
+  "engines": {
+    "node": "5.7.0",
+    "npm": "3.6.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "dev": "webpack-dev-server --config cfg/webpack.dev.js",
+    "lint": "eslint src",
+    "test": "karma start --single-run",
+    "build": "webpack --config cfg/webpack.prod.js"
+  },
   "bugs": {
     "url": "https://github.com/7s4r/husky/issues"
   },
-  "homepage": "https://husky-de-siberie.fr",
   "dependencies": {
-    "react": "^0.14.7"
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
@@ -29,18 +35,30 @@
     "babel-loader": "^6.2.3",
     "babel-polyfill": "^6.5.0",
     "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
     "browser-sync": "^2.11.1",
+    "css-loader": "^0.23.1",
     "eslint": "^2.2.0",
+    "eslint-config-standard": "^5.1.0",
+    "eslint-config-standard-react": "^2.3.0",
     "eslint-loader": "^1.3.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "eslint-plugin-promise": "^1.0.8",
+    "eslint-plugin-react": "^4.1.0",
+    "eslint-plugin-standard": "^1.3.2",
     "express": "^4.13.4",
     "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.9.0",
     "i18n": "^0.7.0",
-    "jade": "^1.11.0",
+    "jade": "^1.7.0",
     "jade-html-loader": "0.0.3",
     "jade-loader": "^0.8.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
+    "react-hot-loader": "^1.3.0",
     "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
   }

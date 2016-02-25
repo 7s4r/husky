@@ -1,6 +1,8 @@
 Husky-de-siberie.fr
 =========================
 
+[![Build status][Master image]][Master]
+
 ## Requirements
 
 ### Node packages

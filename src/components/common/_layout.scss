@@ -1,6 +1,5 @@
 html, body {
   font-family: "Roboto", 'Helvetica Neue, Helvetica, Arial', sans-serif;
-  @include font-smoothing;
   text-rendering: optimizeLegibility;
   text-align: center;
   color: $grey;

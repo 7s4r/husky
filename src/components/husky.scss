@@ -1,3 +1,22 @@
+@import 'common/variables';
+@import 'common/colors';
+
+@each $i, $prop in $k-right-ear {
+  $k-right-ear: map-merge($k-right-ear, (
+    $i: $prop + ' ' + rotateY(180deg)
+  ));
+}
+
+@mixin effect($name, $kf) {
+  @keyframes #{$name} {
+    @each $interval, $transform in $kf {
+      #{percentage($interval/$total-kf)} {
+        transform: $transform;
+      }
+    }
+  }
+}
+
 @include effect('head', $k-head);
 @include effect('mouth', $k-mouth);
 @include effect('nose', $k-nose);
@@ -451,7 +470,7 @@ div:before, div:after {
     height: 100%;
     width: 4vmin;
     right: 26%;
-    transform-origin: center right;
+    transform-origin: center;
     border-top-left-radius: 50% 50%;
     border-bottom-left-radius: 50% 50%;
     transform: rotate(0deg);

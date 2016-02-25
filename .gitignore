@@ -34,3 +34,6 @@ node_modules
 
 # phpStorm
 .idea
+
+# Mac
+.DS_STORE
