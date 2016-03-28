@@ -1,24 +1,24 @@
-import express from "express";
-import React from "react";
-import Router from "react-router";
-const app = express();
+import express from 'express'
+import React from 'react'
+import Router from 'react-router'
+const app = express()
 
 // set up jade
-app.set('views', './src/html');
-app.set('view engine', 'jade');
+app.set('views', './src/html')
+app.set('view engine', 'jade')
 
-import routes from "./src/shared/routes";
+import routes from './src/shared/routes'
 
 app.get('/*', function (req, res) {
   Router.run(routes, req.url, Handler => {
-    let content = React.renderToString(<Handler />);
-    res.render('index', { content: content });
-  });
-});
+    let content = React.renderToString(<Handler />)
+    res.render('index', { content: content })
+  })
+})
 
 var server = app.listen(3000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+  var host = server.address().address
+  var port = server.address().port
 
-  console.log('Server listening at http://%s:%s', host, port);
-});
+  console.log('Server listening at http://%s:%s', host, port)
+})
