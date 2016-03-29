@@ -3,7 +3,6 @@ import React from 'react'
 import Router from 'react-router'
 const app = express()
 
-// set up jade
 app.set('views', './src/html')
 app.set('view engine', 'jade')
 

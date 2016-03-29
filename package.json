@@ -1,7 +1,7 @@
 {
   "name": "husky",
   "version": "0.0.1",
-  "description": "a site to promote siberian husky in France",
+  "description": "A site to promote siberian husky in France",
   "author": "Gueorgui AGAPOV",
   "license": "MIT",
   "homepage": "https://husky-de-siberie.fr",
@@ -9,13 +9,9 @@
     "type": "git",
     "url": "https://github.com/7s4r/husky.git"
   },
-  "engines": {
-    "node": "5.7.0",
-    "npm": "3.6.0"
-  },
   "main": "index.js",
   "scripts": {
-    "start": "node ./server.js",
+    "start": "node app",
     "dev": "webpack-dev-server --config cfg/webpack.dev.js",
     "lint": "eslint src",
     "test": "karma start --single-run",
