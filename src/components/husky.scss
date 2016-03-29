@@ -36,6 +36,26 @@
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
 }
 
+html, body {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-bg;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
 .husky {
   animation: squiggly-anim 0.3s infinite;
   height: 60vmin;
