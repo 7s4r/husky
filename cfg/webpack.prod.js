@@ -5,11 +5,11 @@ var autoprefixer = require("autoprefixer")
 module.exports = {
   devtool: 'source-map',
   entry: [
-    path.resolve(__dirname, "src/javascripts/main"),
-    "file?name=index.html!jade-html!./src/html/index.jade"
+    path.resolve(__dirname, "../src/index"),
+    "file?name=index.html!jade-html!./src/index.jade"
   ],
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: "../build",
     filename: "[name].js",
     publicPath: "/assets/"
   },
