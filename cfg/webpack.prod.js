@@ -22,11 +22,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel!eslint"
+        loader: "babel"
       },
       {
         test: /\.scss$/,
-        loader: "style!css!autoprefixer?browsers=last 2 version!sass"
+        loader: "style!css?sourceMap!postcss!sass?sourceMap"
       },
       {
         test: /\.json/,
@@ -38,7 +38,14 @@ module.exports = {
       }
     ]
   },
+  postcss: [autoprefixer],
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
+    new webpack.ProvidePlugin({
+      'React': 'react',
+    }),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin()
   ],
