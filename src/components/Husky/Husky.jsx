@@ -1,8 +1,11 @@
-import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react'
 import './husky.scss'
 
-export default class Husky extends Component {
+class Husky extends React.Component {
+  constructor() {
+    super()
+  }
+
   render() {
     return (
       <div>
@@ -51,7 +54,4 @@ export default class Husky extends Component {
   }
 }
 
-ReactDOM.render(
-  <Husky />,
-  document.getElementById('app')
-)
+export default Husky
