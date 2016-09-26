@@ -2,6 +2,7 @@ Husky-de-siberie.fr
 =========================
 
 [![Build Status](https://travis-ci.org/7s4r/husky.svg?branch=master)](https://travis-ci.org/7s4r/husky?branch=master)
+[![Dependency Status][https://img.shields.io/david/dev/7s4r/husky.svg]][https://david-dm.org/7s4r/husky]
 
 ## Requirements
 
