@@ -2,10 +2,12 @@
   "parser": "babel-eslint",
   "extends": [
     "standard",
-    "standard-react"
+    "standard-react",
+    "airbnb"
   ],
   "plugins": [
-    "babel"
+    "babel",
+    "react"
   ],
   "env": {
     "browser" : true
