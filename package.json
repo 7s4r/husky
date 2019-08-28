@@ -52,7 +52,7 @@
     "i18n": "^0.8.3",
     "json-loader": "^0.5.4",
     "node-sass": "^3.8.0",
-    "react-hot-loader": "^3.0.0-beta.5",
+    "react-hot-loader": "^4.12.12",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.13",
